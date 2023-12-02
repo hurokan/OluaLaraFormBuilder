@@ -1,0 +1,54 @@
+{
+    "name": "rokan/olualaraformbuilder",
+    "description": "This is a laravel based form builder ",
+    "keywords": [
+        "rokan",
+        "olualaraformbuilder"
+    ],
+    "homepage": "https://github.com/rokan/olualaraformbuilder",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Hasan Uddin Rokan",
+            "email": "hurokan91@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rokan\\OluaLaraFormBuilder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rokan\\OluaLaraFormBuilder\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rokan\\OluaLaraFormBuilder\\OluaLaraFormBuilderServiceProvider"
+            ],
+            "aliases": {
+                "OluaLaraFormBuilder": "Rokan\\OluaLaraFormBuilder\\OluaLaraFormBuilderFacade"
+            }
+        }
+    }
+}
