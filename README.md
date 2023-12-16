@@ -41,7 +41,6 @@ If you discover any security related issues, please email hurokan91@gmail.com in
 ## Credits
 
 -   [Hasan Uddin Rokan](https://github.com/rokan)
--   [All Contributors](../../contributors)
 
 ## License
 
