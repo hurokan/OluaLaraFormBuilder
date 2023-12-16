@@ -1,6 +1,6 @@
 <?php
 
-namespace Rokan\OluaLaraFormBuilder;
+namespace rokan\olualaraformbuilder;
 
 use Illuminate\Support\Facades\Facade;
 

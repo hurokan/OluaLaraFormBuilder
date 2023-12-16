@@ -1,14 +1,16 @@
 <?php
 
-namespace Rokan\OluaLaraFormBuilder;
-
+namespace rokan\olualaraformbuilder;
 use Illuminate\Support\ServiceProvider;
+use rokan\olualaraformbuilder\Interfaces\ApiConsumeInterface;
+use rokan\olualaraformbuilder\Services\ApiConsumeService;
 
 class OluaLaraFormBuilderServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
      */
+
     public function boot()
     {
         /*
@@ -41,7 +43,14 @@ class OluaLaraFormBuilderServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
+//            dd(__DIR__);
         }
+
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'olualaraformbuilder');
+
+//        $this->loadViewsFrom(__DIR__.'/../resources/views', 'olualaraformbuilder');
     }
 
     /**
@@ -54,7 +63,12 @@ class OluaLaraFormBuilderServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton('olualaraformbuilder', function () {
-            return new OluaLaraFormBuilder;
+            return new olualaraformbuilder;
         });
+        $this->app->make('rokan\olualaraformbuilder\SingleFormBuilderController');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'olualaraformbuilder');
+        $this->app->bind(ApiConsumeInterface::class, ApiConsumeService::class);
+
+
     }
 }
