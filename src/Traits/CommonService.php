@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 trait CommonService
 {
     public static function getEndPoints():array {
-        $serverAdd = "http://127.0.0.1:8000/api/v1";
+        $serverAdd = "http://rokan.bio/api/v1";
         return  [
             [
                 'endpoint' => $serverAdd.'/module/migration/content',
